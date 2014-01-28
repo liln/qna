@@ -1,6 +1,6 @@
 require "test_helper"
 
-feature "SignInOut" do
+feature "Sign In Out" do
   scenario "the test is sound" do
     visit root_path
     page.must_have_content "Hello World"

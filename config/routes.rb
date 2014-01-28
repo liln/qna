@@ -1,5 +1,7 @@
 Qanda::Application.routes.draw do
   devise_for :users
   resources :questions
-  root 'question#index'
+
+  get 'questions/index'
+  root to: 'questions#index'
 end
