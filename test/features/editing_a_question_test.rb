@@ -4,6 +4,9 @@ feature "Editing A Question" do
   scenario "unauthenticated site visitors cannot edit answers" do
     visit question_path(questions(:q2))
     page.wont_have_content "Edit"
+
+    visit questions_path
+    page.wont_have_content "Edit"
   end
 
   scenario "users can edit answers" do

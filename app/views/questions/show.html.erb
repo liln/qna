@@ -6,7 +6,7 @@
 <p>
   <strong>Collaborators:</strong>
   <% @question.users.each do |user| %>
-    <%= user.email %>
+    <%= link_to user.email, user_path(user) %>
   <% end %>
 </p>
 
@@ -15,5 +15,5 @@
   <%= @question.answer %>
 </p>
 
-<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Edit', edit_question_path(@question) if current_user.present? %> |
 <%= link_to 'Back', questions_path %>
