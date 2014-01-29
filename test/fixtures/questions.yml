@@ -1,7 +1,14 @@
 q1:
   question: why is the sky blue?
   answer: why not?
+  users: one
 
 q2:
   question: what is going on?
   answer: no idea
+  users: two
+
+q3:
+  question: are you confused?
+  answer: yes I am
+  users: one, two

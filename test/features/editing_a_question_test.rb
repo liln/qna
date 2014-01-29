@@ -1,9 +1,10 @@
 require "test_helper"
 
 feature "Editing A Question" do
-  scenario "the test is sound" do
-    visit root_path
-    page.must_have_content "Hello World"
-    page.wont_have_content "Goobye All!"
+  scenario "unauthenticated site visitors cannot edit answers" do
+
+  end
+
+  scenario "users can edit answers" do
   end
 end
