@@ -1,6 +1,6 @@
 require "test_helper"
 
-feature "EditingAQuestion" do
+feature "Editing A Question" do
   scenario "the test is sound" do
     visit root_path
     page.must_have_content "Hello World"

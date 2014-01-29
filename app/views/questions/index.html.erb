@@ -26,4 +26,6 @@
 
 <br>
 
-<%= link_to 'New Question', new_question_path %>
+<% if current_user.present? %>
+  <%= link_to 'New Question', new_question_path %>
+<% end %>

@@ -25,6 +25,6 @@ feature "Creating A Question" do
 
   scenario "unauthenticated site visitors cannot create a question" do
     visit questions_path
-    page.wont_have_content "Add Question"
+    page.wont_have_content "New Question"
   end
 end
