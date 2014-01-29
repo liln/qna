@@ -10,7 +10,17 @@ feature "Creating A Question" do
     click_on "Create Question"
 
     page.text.must_include "Question was successfully created"
-    page.text.must_include ""
+    page.text.must_include "What's going on?"
+  end
+
+  scenario "logged in user cannot create a blank question" do
+    sign_in
+    visit questions_path
+    click_on "New Question"
+
+    click_on "Create Question"
+
+    page.text.must_include "Question can't be blank"
   end
 
   scenario "unauthenticated site visitors cannot create a question" do

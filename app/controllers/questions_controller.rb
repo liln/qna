@@ -32,6 +32,7 @@ class QuestionsController < ApplicationController
         format.html { redirect_to @question, notice: 'Question was successfully created.' }
         format.json { render action: 'show', status: :created, location: @question }
       else
+        flash.now[:error] = "Question could not be created."
         format.html { render action: 'new' }
         format.json { render json: @question.errors, status: :unprocessable_entity }
       end
@@ -46,6 +47,7 @@ class QuestionsController < ApplicationController
         format.html { redirect_to @question, notice: 'Question was successfully updated.' }
         format.json { head :no_content }
       else
+        flash.now[:error] = "Question could not be saved."
         format.html { render action: 'edit' }
         format.json { render json: @question.errors, status: :unprocessable_entity }
       end
