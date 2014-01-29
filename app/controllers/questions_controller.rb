@@ -26,7 +26,7 @@ class QuestionsController < ApplicationController
   # POST /questions.json
   def create
     @question = Question.new(question_params)
-    @question.users << current_user
+    @question.users << current_user if @question.users.find(current_user) == false
 
     respond_to do |format|
       if @question.save
@@ -45,7 +45,7 @@ class QuestionsController < ApplicationController
   def update
     respond_to do |format|
       if @question.update(question_params)
-        @question.users << current_user
+        @question.users << current_user if @question.users.find(current_user) == false
         format.html { redirect_to @question, notice: 'Question was successfully updated.' }
         format.json { head :no_content }
       else

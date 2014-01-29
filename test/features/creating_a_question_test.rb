@@ -11,6 +11,7 @@ feature "Creating A Question" do
 
     page.text.must_include "Question was successfully created"
     page.text.must_include "What's going on?"
+    page.must_have_content users(:one).email
   end
 
   scenario "logged in user cannot create a blank question" do
